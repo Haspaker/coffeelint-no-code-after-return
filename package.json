@@ -1,0 +1,21 @@
+{
+  "name": "coffeelint-no-code-after-return",
+  "version": "0.0.1",
+  "description": "CoffeeLint plugin for detecting dead code after return statements.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/jellymann/coffeelint-no-code-after-return"
+  },
+  "keywords": [
+    "coffeelintrule"
+  ],
+  "author": "Daniel Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "coffeelint": "^1.9.7"
+  }
+}
