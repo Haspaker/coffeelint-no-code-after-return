@@ -11,10 +11,13 @@
     "url": "https://www.github.com/jellymann/coffeelint-no-code-after-return"
   },
   "keywords": [
-    "coffeelintrule"
+    "coffeelintrule", "coffeelint", "coffee-lint"
   ],
-  "author": "Daniel Smith",
+  "author": "Daniel Smith <jellymann@gmail.com> (http://www.sourlemon.co.za/)",
   "license": "MIT",
+  "peerDependencies": {
+    "coffeelint": ">=1.9"
+  },
   "devDependencies": {
     "chai": "^2.3.0",
     "coffee-script": "^1.9.3",
