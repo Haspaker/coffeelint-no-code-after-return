@@ -1,7 +1,7 @@
 CoffeeLint No Code After Return
 ===============================
 
-A plugin for [CoffeeLint]() for detecting dead code after return statements.
+A plugin for [CoffeeLint](http://www.coffeelint.org/) for detecting dead code after return statements.
 
 Usage
 -----
