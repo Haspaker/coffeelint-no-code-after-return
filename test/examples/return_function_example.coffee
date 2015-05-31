@@ -3,4 +3,5 @@ f = ->
   return ->
     reachable()
     return
-    unreachable
+    unreachable()
+  unreachable()

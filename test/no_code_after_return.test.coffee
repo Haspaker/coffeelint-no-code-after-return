@@ -1,3 +1,4 @@
+_ = require 'lodash'
 chai = require 'chai'
 coffeelint = require 'coffeelint'
 fs = require 'fs'
@@ -15,10 +16,13 @@ isNegative = (name) -> /^negative_/.test name
 forEachExample = (fn) ->
   files = fs.readdirSync examplesDir
   files.filter(isExampleFile).forEach fn
+getUnreachableLines = (source) ->
+  _(source).split("\n")
+    .map (line, num) -> if /unreachable/.test line then num+1 else null
+    .compact().value()
 
 describe 'No Code After Return', ->
   forEachExample (filename) ->
-  # do (filename = 'inside_if_example.coffee') ->
     examplePath = path.join __dirname, 'examples', filename
     context "\"#{filename}\"", ->
       if isNegative(filename)
@@ -36,9 +40,12 @@ describe 'No Code After Return', ->
         it 'has dead code', (done) ->
           fs.readFile examplePath, (err, source) ->
             return done(err) if err
+            unreachableLines = getUnreachableLines(source)
 
             errors = coffeelint.lint(source.toString())
 
-            expect(errors).to.not.be.empty
+            expect(errors).to.have.length unreachableLines.length
+            _.zip(errors, unreachableLines).forEach (pair) ->
+              expect(pair[0].lineNumber).to.equal pair[1]
 
             done()
