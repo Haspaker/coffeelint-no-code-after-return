@@ -29,6 +29,9 @@ module.exports = class NoCodeAfterReturn
     @lintExpression(retExp.expression, astApi) if retExp.expression?
     true
 
+  lintCall: (callExp, astApi) ->
+    callExp.args.forEach (arg) => @lintExpression(arg, astApi)
+
   lintExpression: (exp, astApi) ->
     if exp.constructor.name is 'Return'
       @lintReturn(exp, astApi)
@@ -36,6 +39,8 @@ module.exports = class NoCodeAfterReturn
       @lintIf(exp, astApi)
     else if exp.constructor.name in ['For', 'While', 'Code']
       @lintCode(exp, astApi)
+    else if exp.constructor.name is 'Call'
+      @lintCall(exp, astApi)
 
   lintExpressions: (expressions, astApi) ->
     isAfterReturn = null
