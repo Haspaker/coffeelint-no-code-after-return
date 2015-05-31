@@ -1,5 +1,5 @@
 f = ->
   for x in array
-    doSomething()
+    reachable()
     return 'something'
-    doSomethingElse()
+    unreachable()

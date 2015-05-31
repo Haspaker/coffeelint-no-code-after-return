@@ -1,9 +1,12 @@
 f = ->
-  doSomething()
+  reachable()
   if something
-    doSomething()
+    reachable()
     if somethingElse
-      doSomething()
-      return
-      doSomethingElse()
-  doSomethingElse()
+      reachable()
+      return 'something'
+      unreachable()
+    else
+      return 'nothing'
+    unreachable()
+  reachable()

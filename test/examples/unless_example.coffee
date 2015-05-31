@@ -1,7 +1,7 @@
 f = ->
-  doSomething()
+  reachable()
   unless something
     return 'something'
   else
     return 'nothing'
-  doSomethingElse()
+  unreachable()

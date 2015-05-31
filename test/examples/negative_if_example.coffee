@@ -1,5 +1,5 @@
 f = ->
-  doSomething()
+  reachable()
   if something
     return 'something'
-  doSomethingElse()
+  unreachable()

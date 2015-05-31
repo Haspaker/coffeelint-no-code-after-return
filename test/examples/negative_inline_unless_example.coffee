@@ -1,4 +1,4 @@
 f = ->
-  doSomething()
+  reachable()
   return unless something
-  doSomethingElse()
+  unreachable()

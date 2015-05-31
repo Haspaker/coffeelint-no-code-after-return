@@ -1,5 +1,5 @@
 f = ->
   while something
-    doSomething()
+    reachable()
     return 'something'
-    doSomethingElse()
+    unreachable()

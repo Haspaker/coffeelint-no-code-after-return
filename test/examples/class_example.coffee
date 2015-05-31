@@ -1,5 +1,5 @@
 class Foo
   doFoo: ->
-    doSomething()
+    reachable()
     return
-    doSomethingElse()
+    unreachable()

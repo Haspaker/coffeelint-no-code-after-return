@@ -1,5 +1,5 @@
 f =
   foo: bar: ->
-    doSomething()
+    reachable()
     return
-    doSomethingElse()
+    unreachable()

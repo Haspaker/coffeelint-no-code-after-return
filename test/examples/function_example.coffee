@@ -1,6 +1,6 @@
 f = ->
-  doSomething()
+  reachable()
   ->
-    doSomething()
+    reachable()
     return
-    doSomethingElse()
+    unreachable()
