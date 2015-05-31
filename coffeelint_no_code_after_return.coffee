@@ -38,13 +38,13 @@ module.exports = class NoCodeAfterReturn
       @lintCode(exp, astApi)
 
   lintExpressions: (expressions, astApi) ->
-    returnExp = null
+    isAfterReturn = null
     expressions.forEach (exp) =>
       # @debugNode exp
-      @deadCodeError(exp, astApi) if returnExp
+      @deadCodeError(exp, astApi) if isAfterReturn
       lint = @lintExpression(exp, astApi)
-      returnExp or= lint
-    return returnExp
+      isAfterReturn or= lint
+    return isAfterReturn
 
   lintCode: (code, astApi) -> @lintExpressions code.body.expressions, astApi
 
