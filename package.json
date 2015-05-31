@@ -16,6 +16,8 @@
   "author": "Daniel Smith",
   "license": "MIT",
   "devDependencies": {
+    "chai": "^2.3.0",
+    "coffee-script": "^1.9.3",
     "coffeelint": "^1.9.7"
   }
 }
