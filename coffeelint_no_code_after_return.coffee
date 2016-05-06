@@ -37,7 +37,9 @@ module.exports = class NoCodeAfterReturn
       @lintReturn(exp, astApi)
     else if exp.constructor.name is 'If'
       @lintIf(exp, astApi)
-    else if exp.constructor.name in ['For', 'While', 'Code']
+    else if exp.constructor.name is 'For' and not exp.guard?
+      @lintCode(exp, astApi)
+    else if exp.constructor.name in ['While', 'Code']
       @lintCode(exp, astApi)
     else if exp.constructor.name is 'Call'
       @lintCall(exp, astApi)
