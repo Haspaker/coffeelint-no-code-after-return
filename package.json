@@ -1,6 +1,6 @@
 {
   "name": "coffeelint-no-code-after-return",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CoffeeLint plugin for detecting dead code after return statements.",
   "main": "index.js",
   "scripts": {
