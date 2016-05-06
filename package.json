@@ -4,7 +4,7 @@
   "description": "CoffeeLint plugin for detecting dead code after return statements.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "chai": "^2.3.0",
     "coffee-script": "^1.9.3",
     "coffeelint": "^1.9.7",
-    "lodash": "^3.9.3"
+    "lodash": "^3.9.3",
+    "mocha": "^2.4.5"
   }
 }
